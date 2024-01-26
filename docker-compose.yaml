@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  # Node.js API
+  api:
+    build: ./api
+    container_name: api_c
+    ports:
+      - '4000:4000'
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/mydatabase
+    volumes:
+      - ./api:/app
+      - ./app/node_modules
+  # MongoDB service
+  mongo:
+    image: mongo:5.0
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin123
+      - MONGO_INITDB_DATABASE=mydatabase
+    volumes:
+      - dbdata6:/data/db
+  # React Front-end
+  # blogs:
+  #   build: ./blogs
+  #   container_name: blogs_c
+  #   ports:
+  #     - '3000:3000'
+  #   stdin_open: true
+volumes:
+  dbdata6:
