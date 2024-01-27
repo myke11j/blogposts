@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "d0cd2782-eda5-4bc4-a7f9-f3ce07ad70e3",
+		"name": "Sertis Blogposts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Abc\",\n    \"password\": \"abc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Xyz\",\n    \"password\": \"xyz\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/register",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post routes - Protected",
+			"item": [
+				{
+					"name": "Add Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFiYyIsImlhdCI6MTcwNjM2Nzk1NCwiZXhwIjoxNzA2NDExMTU0fQ.roTsS-KFqvByK3gv7U6PJmFanIhwQeqFYXTa4eBudmk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Post title\",\n    \"published\": true,\n    \"content\": \"Content is new ContentContentContentContent Conte t\",\n    \"category\": \"Sports\",\n    \"author_name\": \"Abc\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFiYyIsImlhdCI6MTcwNjM2Nzk1NCwiZXhwIjoxNzA2NDExMTU0fQ.roTsS-KFqvByK3gv7U6PJmFanIhwQeqFYXTa4eBudmk\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/auth/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete posts",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxMjMiLCJpYXQiOjE3MDYzMDQxNzAsImV4cCI6MTcwNjM0NzM3MH0.pqAmIk_hWcINbnFDjViwa4oR05IwglSouQG_RERUavY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"65b4137bd8c805c49aa129\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFiYyIsImlhdCI6MTcwNjM2Nzk1NCwiZXhwIjoxNzA2NDExMTU0fQ.roTsS-KFqvByK3gv7U6PJmFanIhwQeqFYXTa4eBudmk\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/auth/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Published and Draft Posts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFiYyIsImlhdCI6MTcwNjM1NDU0MiwiZXhwIjoxNzA2Mzk3NzQyfQ.083WgdHPOGLQ5JJkFi1zvshk9zfk18M3ZfYj3hcdi7M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFiYyIsImlhdCI6MTcwNjM2ODQ1MSwiZXhwIjoxNzA2NDExNjUxfQ.WemPPWO5ypzh1JjPrQnxNdbjZNfehsFvvp6V3ARGUXU\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/posts/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"posts",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post Routes - Public",
+			"item": [
+				{
+					"name": "Get All Public Published Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/public/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"public",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/public/posts/65b51c346da7310043889e63",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"public",
+								"posts",
+								"65b51c346da7310043889e63"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top 10 categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxMjMiLCJpYXQiOjE3MDYzMDQxNzAsImV4cCI6MTcwNjM0NzM3MH0.pqAmIk_hWcINbnFDjViwa4oR05IwglSouQG_RERUavY",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:4000/api/public/posts/top/category",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"public",
+								"posts",
+								"top",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top users by post count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/public/posts/top/users",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"public",
+								"posts",
+								"top",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

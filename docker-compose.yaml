@@ -25,11 +25,11 @@ services:
     volumes:
       - dbdata6:/data/db
   # React Front-end
-  # blogs:
-  #   build: ./blogs
-  #   container_name: blogs_c
-  #   ports:
-  #     - '3000:3000'
-  #   stdin_open: true
+  blogs:
+    build: ./blogs
+    container_name: blogs_c
+    ports:
+      - '3000:3000'
+    stdin_open: true
 volumes:
   dbdata6:
