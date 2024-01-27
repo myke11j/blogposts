@@ -1,0 +1,83 @@
+.create-new-post-form {
+    width: 75%;
+    float: left;
+    margin: 20px;
+}
+
+.create-new-post-form input textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+    
+.create-new-post-form input:focus {
+    border-color: #2ecc71;
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+}
+
+.create-new-post-form input::placeholder {
+    color: #95a5a6;
+}
+
+.create-new-post-form input.error {
+    border-color: #e74c3c;
+}
+
+.create-new-post-form input.success {
+    border-color: #2ecc71;
+}
+
+.create-new-post-form input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.create-new-post-form input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.create-new-post-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
+}
+    
+    .create-new-post-form button:hover {
+    background-color: #2980b9;
+    }
+    
+    .create-new-post-form button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+    }
+    
+    .create-new-post-form button.success {
+    background-color: #2ecc71;
+    }
+    
+    .create-new-post-form button.danger {
+    background-color: #e74c3c;
+    }
+    
+.create-new-post-form button.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
+.create-new-post-form button.icon:hover {
+    background-color: transparent;
+    color: #3498db;
+}
+    

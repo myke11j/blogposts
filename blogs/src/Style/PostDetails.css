@@ -1,0 +1,33 @@
+
+  .blog-post {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-title {
+    color: #007bff;
+  }
+  
+  .blog-content {
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .blog-meta {
+    margin-top: 10px;
+  }
+  
+  .category, .author {
+    display: inline-block;
+    margin-right: 10px;
+    color: #6c757d;
+  }
+  
+  .category::before, .author::before {
+    content: '|';
+    margin-right: 5px;
+  }
+  

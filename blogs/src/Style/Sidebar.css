@@ -1,0 +1,23 @@
+.sidebar {
+    align-items: center;
+    text-align: center;
+    float: left;
+    width: 20%;
+    display: inline;
+    background-color: rgb(29 163 182);
+}
+
+.sidebar a {
+    color: #ccc;
+    display: block;
+    margin: 10%;
+    padding: 8%;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.sidebar a:hover {
+    background-color: #bde4e9;
+    color: #555;
+    transform: scale(0.7);
+    background-color: #b4ebf2;
+    cursor: pointer;
+}
