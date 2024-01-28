@@ -17,8 +17,13 @@ body {
 }
 
 .left-section {
+  display: flex;
   width: 25%;
   align-items: center;
+}
+
+.left-section-tab {
+  padding-right: 10px
 }
 
 .left-section h1 {

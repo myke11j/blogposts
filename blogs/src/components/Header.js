@@ -19,19 +19,21 @@ function Header({ jwtToken, onLogout }) {
         <header className="header">
             <div className="top-bar">
                 <div className="left-section">
-                    <h1>What's new blogs</h1>
-                    <FontAwesomeIcon icon={faCommenting} />
+                    <h1 className="left-section-tab">What's new blogs</h1>
+                    <FontAwesomeIcon className="left-section-tab" icon={faCommenting} />
                     <div>
                     {jwtToken ? (
-                        <button onClick={handleLogout}>Logout</button>
+                        <div className="left-section-tab">
+                            <button onClick={handleLogout}>Logout</button>
+                        </div>
                     ) : (
-                        <div>
-                        <button>
-                            <Link to="/login">Login</Link>
-                        </button>
-                        <button>
-                            <Link to="/register">Register</Link>
-                        </button>
+                        <div className="left-section-tab">
+                            <button>
+                                <Link to="/login">Login</Link>
+                            </button>
+                            <button>
+                                <Link to="/register">Register</Link>
+                            </button>
                         </div>
                     )}
                     </div>
