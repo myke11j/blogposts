@@ -2,8 +2,8 @@
 
 1. Users have the option to browse through all published posts from every user on the homepage or the Latest Activity tab.
 2. To view, edit, or delete posts, users can simply click on the My Posts tab; please note that logging in is a prerequisite.
-3. The Top Authors tab page displays the post count of the most prolific authors.
-4. The sidebar features a list of top categories, organized by the number of associated posts. Categories will only be visible if there are posts within that specific category.
+3. Create post doesn't require author name as it will be extracted from jwt token of user.
+4. The Top Authors tab page displays the post count of the most prolific authors.
 
 ![Top Authors](./resources/top-posts.png)
 ![Blog Details](./resources/blog-details.png)
@@ -12,6 +12,7 @@
 
 - Node.js, React
 - Mongo
+- Docker
 
 ### Steps to run on local
 

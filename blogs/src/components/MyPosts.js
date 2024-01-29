@@ -25,9 +25,7 @@ const MyPosts = ({ jwtToken }) => {
     };
 
     const handleEditModalSave = (editedPost) => {
-        console.log('Saving edited post:', editedPost);
         const payload = { ...editedPost, token: jwtToken }
-        console.log('new edited post:', payload);
         setEditModalVisible(false);
         setSelectedPost(null);
         editPost(payload);
@@ -120,7 +118,7 @@ const MyPosts = ({ jwtToken }) => {
         <div className='my-posts'>
             <div className="blogs">
                 {data && data.map(post => (
-                    <div className="blog-section">
+                    <div className="blog-section" key={post._id}>
                         <Link to={`/post/${post._id}`} key={post._id}>
                             <h3>{post.title}</h3>
                             <p>{post.content}</p>

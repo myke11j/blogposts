@@ -4,14 +4,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { categories } from '../utils/constants.js'
 
 import "../Style/CreatePost.css"
 
 const CreatePost = ({ jwtToken }) => {
     const navigate = useNavigate();
-
-    // Same as in /api/utils/constant.js
-    const categories = ['Gaming', 'Art', 'Music', 'Movies', 'Anime', 'Work', 'Trending', 'Sports', 'Travel', 'Misc'];
 
     const [formData, setFormData] = useState({
         title: '',
@@ -30,10 +28,11 @@ const CreatePost = ({ jwtToken }) => {
     };
     
     const handleRadioChange = (e) => {
-        const { name, checked } = e.target;
+        const { name } = e.target;
+        const checked = name === 'published'
         setFormData({
           ...formData,
-          [name]: checked,
+          ['published']: checked
         });
     };
 
@@ -115,7 +114,7 @@ const CreatePost = ({ jwtToken }) => {
           <input
             type="radio"
             id="not-published"
-            name="published"
+            name="not-published"
             checked={!formData.published}
             onChange={handleRadioChange}
           />

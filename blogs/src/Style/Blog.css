@@ -50,7 +50,7 @@
   align-items: center;
   justify-content: center;
   padding: 15px;
-  background-color: #2a788b; 
+  background-color: #1683cc; 
   color: #fff; 
   border: none;
   border-radius: 8px;
@@ -62,7 +62,7 @@
 }
 
 .create-post-button:hover {
-  background-color: #638e99; 
+  background-color: #0a68a6; 
 }
 
 .plus-icon {

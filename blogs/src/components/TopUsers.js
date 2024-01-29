@@ -18,7 +18,7 @@ function TopUsers() {
     return (
         <div className="blogs">
             {data && data.map(post => (
-                <div className="blog-section">
+                <div className="blog-section" key={post._id}>
                     <h3>Author name: {post._id}</h3>
                     <div className="author-name details">
                         {post.count} posts published <FontAwesomeIcon icon={faMedal} />

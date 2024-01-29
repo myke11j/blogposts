@@ -20,17 +20,17 @@ const PostEditModal = ({ post, onSave, onCancel, categories }) => {
   };
 
   const handleRadioChange = (e) => {
-    const { name, checked } = e.target;
-    setFormData({ ...formData, [name]: checked });
-  };
+    const { name } = e.target;
+    const checked = name === 'published'
+    setFormData({ ...formData, ['published']: checked });
+};
 
   const handleSave = () => {
     onSave(formData);
   };
 
   return (
-    <div className="modal">
-      <div className="create-new-post-form">
+    <div className="modal create-new-post-form">
         <h2>Edit Post</h2>
         <form className="login-form">
           <label htmlFor="title">Title:</label>
@@ -82,7 +82,7 @@ const PostEditModal = ({ post, onSave, onCancel, categories }) => {
             <input
               type="radio"
               id="not-published"
-              name="published"
+              name="not published"
               checked={!formData.published}
               onChange={handleRadioChange}
             />
@@ -96,7 +96,6 @@ const PostEditModal = ({ post, onSave, onCancel, categories }) => {
             Cancel
           </button>
         </form>
-      </div>
     </div>
   );
 };
